@@ -29,7 +29,9 @@
   --shadow-glow-hover: 0 0 50px rgba(102, 126, 234, 0.6);
   --shadow-cosmic: 0 25px 80px rgba(102, 126, 234, 0.4);
 }
-
+button {
+  cursor: pointer;
+}
 /* === Fancy Background Effects === */
 .fancy-bg {
   position: relative;
@@ -156,8 +158,6 @@
 }
 
 .btn-fancy-sunset {
-  background: var(--gradient-sunset);
-  box-shadow: 0 0 30px rgba(250, 112, 154, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -630,3 +630,4 @@
 .dark .nav-fancy {
   background: rgba(0, 0, 0, 0.5);
 }
+
