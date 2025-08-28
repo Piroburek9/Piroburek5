@@ -1,0 +1,253 @@
+import { Question } from '../dataService';
+
+// Seed questions for ENT: History of Kazakhstan (20)
+// Source provided by user in custom JSON schema; transformed to internal Question type
+
+function letterToIndex(letter: string): number {
+  const map: Record<string, number> = { A: 0, B: 1, C: 2, D: 3, E: 4, F: 5 };
+  return map[letter.toUpperCase()] ?? 0;
+}
+
+export const historyKZSeed: Question[] = [
+  {
+    id: 'hist-seed-1',
+    question: 'В середине IV века до границ Римской империи дошли',
+    type: 'multiple_choice',
+    options: ['карлуки', 'гунны', 'кидани', 'саки'],
+    correct_answer: letterToIndex('B'),
+    correctAnswer: letterToIndex('B'),
+    explanation: 'В середине IV века гунны начали Великое переселение народов, достигнув границ Римской империи.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-2',
+    question: 'За особо выдающиеся, многократные подвиги в сражениях присваивали звание',
+    type: 'multiple_choice',
+    options: ['«аксакал»', '«таксыр»', '«толу батыр»', '«торе»'],
+    correct_answer: letterToIndex('C'),
+    correctAnswer: letterToIndex('C'),
+    explanation: '«Толу батыр» — почетное звание выдающимся воинам за многократные подвиги в боях.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-3',
+    question: 'Объединенная армия в 60 тысяч воинов участвовала в битве против джунгар при',
+    type: 'multiple_choice',
+    options: ['Буланты', 'Орбулаке', 'Аягузе', 'Аныракай'],
+    correct_answer: letterToIndex('D'),
+    correctAnswer: letterToIndex('D'),
+    explanation: 'В 1729 году в Аныракайской битве объединённая армия казахских жузов численностью около 60 тысяч воинов нанесла поражение джунгарам.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-4',
+    question: 'В начале XX века построен (-а)',
+    type: 'multiple_choice',
+    options: ['Железная дорога Оренбург-Ташкент', 'Водный канал Иртыш-Караганда', 'Капчагайская электростанция', 'Шульбинская гидроэлектростанция'],
+    correct_answer: letterToIndex('A'),
+    correctAnswer: letterToIndex('A'),
+    explanation: 'Оренбург-Ташкентская железная дорога была построена в 1901–1906 годах и имела важное экономическое значение.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-5',
+    question: 'В 1956 году осудил культ личности Сталина',
+    type: 'multiple_choice',
+    options: ['XIX партийная конференция', 'V пленум ЦК КПК', 'XXVII съезд КПСС', 'XX съезд КПСС'],
+    correct_answer: letterToIndex('D'),
+    correctAnswer: letterToIndex('D'),
+    explanation: 'XX съезд КПСС (февраль 1956 года) осудил культ личности Сталина, что стало началом политики «оттепели».',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-6',
+    question: 'Записал киргизский эпос «Манас»',
+    type: 'multiple_choice',
+    options: ['Абай Кунанбаев', 'Ыбрай Алтынсарин', 'Шокан Уалиханов', 'Алихан Букейханов'],
+    correct_answer: letterToIndex('C'),
+    correctAnswer: letterToIndex('C'),
+    explanation: 'Шокан Уалиханов записал и исследовал киргизский эпос «Манас», оказав большой вклад в этнографию.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-7',
+    question: 'Кочевники эпохи поздней бронзы в совершенстве владели',
+    type: 'multiple_choice',
+    options: ['секретами изготовления красок', 'приемами строительства дамб', 'искусством плавки металлов', 'приемами изготовления фарфора'],
+    correct_answer: letterToIndex('C'),
+    correctAnswer: letterToIndex('C'),
+    explanation: 'Кочевники позднего бронзового века освоили плавку меди, бронзы и других металлов.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-8',
+    question: 'Столица Белой Орды',
+    type: 'multiple_choice',
+    options: ['Отвар', 'Узгенд', 'Сыгнак', 'Ташкент'],
+    correct_answer: letterToIndex('C'),
+    correctAnswer: letterToIndex('C'),
+    explanation: 'Сыгнак был столицей Белой Орды и важным политическим и торговым центром.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-9',
+    question: 'Автор реформы 1824 года в Младшем жузе',
+    type: 'multiple_choice',
+    options: ['О.Игельстром', 'П.Эссен', 'Н.Коншин', 'М.Сперанский'],
+    correct_answer: letterToIndex('B'),
+    correctAnswer: letterToIndex('B'),
+    explanation: 'Генерал-губернатор П.Эссен провёл реформу 1824 года, ликвидировав ханскую власть в Младшем жузе.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-10',
+    question: 'В годы Великой Отечественной войны (1941-1945 гг.) в битве за Москву исключительную стойкость и героизм проявил Герой Советского Союза',
+    type: 'multiple_choice',
+    options: ['С.Нурмаганбетов', 'Н.Абдиров', 'Б.Момышульь', 'Ж.Елеусов'],
+    correct_answer: letterToIndex('C'),
+    correctAnswer: letterToIndex('C'),
+    explanation: 'Бауыржан Момышулы — участник битвы за Москву, проявивший выдающееся военное мастерство.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-11',
+    question: 'Определите период охватывающий этнический процесс, изображенный на карте',
+    type: 'multiple_choice',
+    options: ['V-VI вв.', 'VI-XIII вв.', 'I-II вв.', 'XIII-XV вв.'],
+    correct_answer: letterToIndex('B'),
+    correctAnswer: letterToIndex('B'),
+    explanation: 'Этнические процессы VI–XIII вв. связаны с существованием Тюркского каганата и других кочевых государств.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-12',
+    question: 'Опираясь на карту, определите государство из-за которого начался новый этап этногенеза на территории Казахстана',
+    type: 'multiple_choice',
+    options: ['Могулистан', 'Тюркский каганат', 'Монгольская империя', 'Империя Тимура'],
+    correct_answer: letterToIndex('C'),
+    correctAnswer: letterToIndex('C'),
+    explanation: 'Монгольское нашествие XIII века вызвало значительные этнические и политические изменения.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-13',
+    question: 'Определите государства на карте, под №2 и №3',
+    type: 'multiple_choice',
+    options: ['Могулистан и Ногайская Орда', 'Ханство Абулханра и Казахского ханство', 'Империя Тимура и Моголистана', 'Ногайская Орда и Казахское ханство'],
+    correct_answer: letterToIndex('A'),
+    correctAnswer: letterToIndex('A'),
+    explanation: 'На карте под №2 — Могулистан, под №3 — Ногайская Орда.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-14',
+    question: 'Определите государство на карте №1',
+    type: 'multiple_choice',
+    options: ['Ханство Абулханра', 'Ногайская Орда', 'Могулистан', 'Империя Тимура'],
+    correct_answer: letterToIndex('A'),
+    correctAnswer: letterToIndex('A'),
+    explanation: 'На карте под №1 изображено Ханство Абулхаира.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-15',
+    question: 'Опираясь на карту укажите второе название государства №3',
+    type: 'multiple_choice',
+    options: ['Кок Орда', 'Сибирское ханство', 'Улус Шайбанндов', 'Мангытский юрт'],
+    correct_answer: letterToIndex('D'),
+    correctAnswer: letterToIndex('D'),
+    explanation: 'Ногайская Орда также называлась Мангытским юртом.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-16',
+    question: 'Изучив контекст, определите событие произошедшее в истории Казахстана',
+    type: 'multiple_choice',
+    options: ['индустриализация', 'интервенция', 'размежевание', 'голод'],
+    correct_answer: letterToIndex('D'),
+    correctAnswer: letterToIndex('D'),
+    explanation: 'Речь идёт о массовом голоде 1931–1933 гг., унесшем жизни миллионов.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-17',
+    question: 'Используя контекст и исторические знания, определите хронологические рамки события, в результате которого население Казахстана сократилось в три раза',
+    type: 'multiple_choice',
+    options: ['1919-1920 гг.', '1941-1942 гг.', '1931-1933 гг.', '1918-1920 гг.'],
+    correct_answer: letterToIndex('C'),
+    correctAnswer: letterToIndex('C'),
+    explanation: 'Голод 1931–1933 годов сократил численность казахов почти втрое.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-18',
+    question: 'Одной из причин события, представленного на фотографиях, среди коренного населения в Казахстане стал (-о,-и):',
+    type: 'multiple_choice',
+    options: ['нарушение принципа добровольности и законности', 'массовые репрессии национальной интеллигенции', 'запрет на выезд сельского населения', 'пополнение состава населения за счет депортированных'],
+    correct_answer: letterToIndex('A'),
+    correctAnswer: letterToIndex('A'),
+    explanation: 'Коллективизация проводилась принудительно, без соблюдения принципа добровольности, что стало причиной трагедии.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  },
+  {
+    id: 'hist-seed-19',
+    question: 'Определите по контексту событие, вошедшее в историю как годы',
+    type: 'multiple_choice',
+    options: ['«великой емуты»', '«великого джута»', '«рисовых бунтов»', '«красного террора»'],
+    correct_answer: letterToIndex('B'),
+    correctAnswer: letterToIndex('B'),
+    explanation: 'Массовый голод 1931–1933 гг. известен как «великий джут».',
+    subject: 'history_kz',
+    difficulty: 'medium'
+  },
+  {
+    id: 'hist-seed-20',
+    question: 'Процесс восстановления численности казахского населения в XX веке после данного события, представленного в контексте, длился до',
+    type: 'multiple_choice',
+    options: ['конца 60-х годов', 'конца 70-х годов', 'начала 40-х годов', 'начала 80-х годов'],
+    correct_answer: letterToIndex('A'),
+    correctAnswer: letterToIndex('A'),
+    explanation: 'Численность казахов восстановилась до уровня, предшествовавшего голоду, лишь к концу 1960-х годов.',
+    subject: 'history_kz',
+    difficulty: 'medium',
+    lang: 'ru'
+  }
+];
+
+
