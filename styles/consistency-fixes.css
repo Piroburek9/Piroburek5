@@ -1,0 +1,423 @@
+/* ===== CONSISTENCY FIXES FOR UI ISSUES ===== */
+
+/* === STANDARDIZED CARD SYSTEM === */
+
+/* Base card component - replaces all inconsistent card styles */
+.card-standard {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  color: hsl(var(--card-foreground));
+}
+
+.card-standard:hover {
+  box-shadow: var(--shadow-md);
+  border-color: hsl(var(--border-hover));
+  transform: translateY(-1px);
+}
+
+/* Card variants for different contexts */
+.card-interactive {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  color: hsl(var(--card-foreground));
+}
+
+.card-interactive:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: hsl(var(--primary) / 0.3);
+  transform: translateY(-2px);
+}
+
+.card-interactive:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Navigation card - replaces fancy-card in navigation */
+.card-nav {
+  background: hsl(var(--surface) / 0.8);
+  border: 1px solid hsl(var(--border) / 0.5);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-fast);
+  color: hsl(var(--foreground));
+  min-height: 44px; /* touch target */
+  display: inline-flex;
+  align-items: center;
+}
+
+.card-nav:hover {
+  background: hsl(var(--surface-hover) / 0.9);
+  border-color: hsl(var(--border-hover));
+  transform: translateY(-1px);
+}
+
+.card-nav.active {
+  background: hsl(var(--primary) / 0.1);
+  border-color: hsl(var(--primary) / 0.3);
+  color: hsl(var(--primary));
+}
+
+/* Message card - for chat messages */
+.card-message {
+  background: hsl(var(--card) / 0.95);
+  border: 1px solid hsl(var(--border) / 0.5);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  backdrop-filter: blur(5px);
+  color: hsl(var(--card-foreground));
+  box-shadow: var(--shadow-sm);
+}
+
+.card-message.user {
+  background: hsl(var(--primary) / 0.1);
+  border-color: hsl(var(--primary) / 0.3);
+  color: hsl(var(--primary-foreground));
+  margin-left: auto;
+}
+
+.card-message.assistant {
+  background: hsl(var(--accent) / 0.1);
+  border-color: hsl(var(--accent) / 0.3);
+}
+
+/* === ENHANCED PROGRESS COMPONENTS === */
+
+/* Progress container with context */
+.progress-with-context {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.progress-subject {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: hsl(var(--text-primary));
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.progress-value {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: hsl(var(--text-secondary));
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* Enhanced progress bar */
+.progress-enhanced {
+  position: relative;
+  background: hsl(var(--muted));
+  border-radius: var(--radius-full);
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-bar-enhanced {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Progress bar colors based on performance */
+.progress-excellent { background: linear-gradient(90deg, hsl(var(--success)), hsl(var(--success)) 80%); }
+.progress-good { background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary)) 80%); }
+.progress-average { background: linear-gradient(90deg, hsl(var(--warning)), hsl(var(--warning)) 80%); }
+.progress-poor { background: linear-gradient(90deg, hsl(var(--error)), hsl(var(--error)) 80%); }
+
+/* Progress details */
+.progress-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-xs);
+  color: hsl(var(--text-muted));
+  margin-top: var(--space-1);
+}
+
+.progress-questions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.progress-target {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* === UNIFIED TYPOGRAPHY SYSTEM === */
+
+/* Heading hierarchy - replaces inconsistent heading styles */
+.heading-primary {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: hsl(var(--text-primary));
+  margin-bottom: var(--space-6);
+}
+
+.heading-secondary {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: hsl(var(--text-primary));
+  margin-bottom: var(--space-4);
+}
+
+.heading-tertiary {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  color: hsl(var(--text-primary));
+  margin-bottom: var(--space-3);
+}
+
+.heading-section {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  color: hsl(var(--text-primary));
+  margin-bottom: var(--space-2);
+}
+
+.heading-subsection {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  color: hsl(var(--text-secondary));
+  margin-bottom: var(--space-2);
+}
+
+/* Navigation text consistency */
+.nav-text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  color: hsl(var(--text-primary));
+}
+
+.nav-text-active {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  color: hsl(var(--primary));
+}
+
+/* === CONTENT CONTEXT SYSTEM === */
+
+/* Subject context for truncated content */
+.content-with-subject {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.subject-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: hsl(var(--text-muted));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.content-main {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  color: hsl(var(--text-primary));
+}
+
+.content-secondary {
+  font-size: var(--font-size-xs);
+  color: hsl(var(--text-secondary));
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* Question count with context */
+.question-count-enhanced {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  background: hsl(var(--muted) / 0.5);
+  border-radius: var(--radius-md);
+  border-left: 3px solid hsl(var(--primary));
+}
+
+.question-count-subject {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: hsl(var(--text-primary));
+}
+
+.question-count-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  color: hsl(var(--text-secondary));
+}
+
+.question-count-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.question-count-target {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: hsl(var(--text-muted));
+}
+
+/* === NAVIGATION CONSOLIDATION === */
+
+/* Single header for chat - removes redundancy */
+.chat-header-consolidated {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  background: hsl(var(--surface) / 0.8);
+  border-bottom: 1px solid hsl(var(--border));
+  backdrop-filter: blur(10px);
+}
+
+.chat-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: hsl(var(--text-primary));
+}
+
+.chat-subtitle {
+  font-size: var(--font-size-sm);
+  color: hsl(var(--text-secondary));
+  margin-top: var(--space-1);
+}
+
+/* Hide redundant elements */
+.nav-redundant {
+  display: none;
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+
+@media (max-width: 768px) {
+  .card-standard,
+  .card-interactive {
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+  }
+  
+  .progress-with-context {
+    gap: var(--space-1);
+    margin-bottom: var(--space-3);
+  }
+  
+  .progress-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+  
+  .question-count-enhanced {
+    padding: var(--space-2);
+  }
+  
+  .heading-primary {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .heading-secondary {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* === ACCESSIBILITY ENHANCEMENTS === */
+
+/* Focus states for interactive cards */
+.card-interactive:focus,
+.card-nav:focus {
+  outline: 3px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Screen reader improvements */
+.progress-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card-standard,
+  .card-interactive,
+  .card-nav {
+    border-width: 2px;
+    background: Canvas;
+    color: CanvasText;
+  }
+  
+  .progress-enhanced {
+    border: 1px solid;
+  }
+  
+  .progress-bar-enhanced {
+    background: Highlight !important;
+  }
+}
+
+/* === UTILITY CLASSES === */
+
+/* Quick fixes for existing components */
+.fix-card-consistency {
+  background: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: var(--radius-xl) !important;
+  color: hsl(var(--card-foreground)) !important;
+}
+
+.fix-heading-consistency {
+  font-weight: var(--font-weight-semibold) !important;
+  color: hsl(var(--text-primary)) !important;
+}
+
+.fix-nav-consistency {
+  font-size: var(--font-size-sm) !important;
+  font-weight: var(--font-weight-medium) !important;
+}

@@ -1,0 +1,383 @@
+/* ===== CONVERSION OPTIMIZATION STYLES ===== */
+
+/* === HIGH-CONTRAST CTA SYSTEM === */
+
+/* Primary CTA - Maximum Conversion */
+.cta-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  min-height: 48px; /* Touch target */
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-primary:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.cta-primary:active {
+  transform: translateY(0) scale(1);
+  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+}
+
+.cta-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.5);
+}
+
+/* Secondary CTA - Clear Hierarchy */
+.cta-secondary {
+  background: white;
+  color: #374151;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.875rem 1.75rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  min-height: 48px;
+  transition: all 0.2s ease;
+}
+
+.cta-secondary:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+  transform: translateY(-1px);
+}
+
+.cta-secondary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* Social Sign-In CTAs */
+.cta-social {
+  background: white;
+  color: #374151;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  min-height: 44px;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.cta-social:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cta-social.google {
+  border-color: #ea4335;
+}
+
+.cta-social.google:hover {
+  background: #fef2f2;
+  border-color: #dc2626;
+}
+
+.cta-social.linkedin {
+  border-color: #0077b5;
+}
+
+.cta-social.linkedin:hover {
+  background: #eff6ff;
+  border-color: #2563eb;
+}
+
+/* === VALUE PROPOSITION STYLING === */
+
+.hero-headline {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subheadline {
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.value-highlight {
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+}
+
+/* Social Proof Elements */
+.social-proof-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* === MOBILE OPTIMIZATION === */
+
+/* Touch-friendly targets */
+@media (max-width: 768px) {
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+    padding: 1.25rem 2rem;
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .cta-social {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  /* Stack CTAs vertically on mobile */
+  .cta-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  
+  .cta-container-horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+  
+  /* Improved readability on mobile */
+  .hero-headline {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+  
+  .hero-subheadline {
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+}
+
+/* === HIGH CONTRAST MODE SUPPORT === */
+@media (prefers-contrast: high) {
+  .cta-primary {
+    background: #000;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  
+  .cta-secondary {
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+  }
+  
+  .hero-headline {
+    color: #000;
+  }
+  
+  .hero-subheadline {
+    color: #333;
+  }
+}
+
+/* === ACCESSIBILITY IMPROVEMENTS === */
+
+/* Focus indicators */
+.cta-primary:focus-visible,
+.cta-secondary:focus-visible,
+.cta-social:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .cta-primary,
+  .cta-secondary,
+  .cta-social {
+    transition: none;
+    transform: none;
+  }
+  
+  .cta-primary:hover,
+  .cta-secondary:hover {
+    transform: none;
+  }
+}
+
+/* === LANDING PAGE SPECIFIC === */
+
+.landing-nav {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.landing-hero {
+  background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 50%, #e0e7ff 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='7' cy='7' r='1'/%3E%3Ccircle cx='37' cy='37' r='1'/%3E%3Ccircle cx='52' cy='22' r='1'/%3E%3Ccircle cx='22' cy='52' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Progress preview styling */
+.progress-preview {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar-preview {
+  height: 8px;
+  border-radius: 4px;
+  background: #e5e7eb;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-fill.excellent { background: linear-gradient(90deg, #10b981, #059669); }
+.progress-fill.good { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+.progress-fill.average { background: linear-gradient(90deg, #f59e0b, #d97706); }
+
+/* Trust indicators */
+.trust-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.trust-indicator-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #10b981;
+}
+
+/* === DARK MODE OPTIMIZATIONS === */
+.dark .landing-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #312e81 100%);
+}
+
+.dark .hero-headline {
+  color: #f8fafc;
+}
+
+.dark .hero-subheadline {
+  color: #cbd5e1;
+}
+
+.dark .cta-secondary {
+  background: #374151;
+  color: #f9fafb;
+  border-color: #4b5563;
+}
+
+.dark .cta-secondary:hover {
+  background: #4b5563;
+  border-color: #6b7280;
+}
+
+.dark .progress-preview {
+  background: rgba(15, 23, 42, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* === PERFORMANCE OPTIMIZATIONS === */
+
+/* GPU acceleration for animations */
+.cta-primary,
+.cta-secondary {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Prevent layout shift */
+.cta-container {
+  min-height: 60px;
+}
+
+/* === PRINT STYLES === */
+@media print {
+  .cta-primary,
+  .cta-secondary,
+  .cta-social {
+    background: white !important;
+    color: black !important;
+    border: 2px solid black !important;
+  }
+  
+  .landing-hero {
+    background: white !important;
+  }
+}

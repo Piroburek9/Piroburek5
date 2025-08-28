@@ -1,0 +1,178 @@
+/* ===== КРИТИЧЕСКИЕ ИСПРАВЛЕНИЯ ВИДИМОСТИ ДЛЯ ТЕСТОВ ===== */
+
+/* Исправление для страницы Tests.tsx */
+.tests-page {
+  background: linear-gradient(135deg, #0f172a 0%, #581c87 50%, #0f172a 100%);
+  min-height: 100vh;
+  color: white;
+}
+
+/* Исправление для заголовков в Tests */
+.tests-page h1,
+.tests-page h2,
+.tests-page h3 {
+  color: white !important;
+}
+
+/* Исправление для описательного текста */
+.tests-page p {
+  color: #e2e8f0 !important; /* light gray */
+}
+
+/* Исправление для мелкого текста */
+.tests-page .text-sm {
+  color: #cbd5e1 !important; /* lighter gray */
+}
+
+/* Исправление для карточек предметов */
+.subject-card {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  color: #1f2937 !important;
+  padding: 1rem !important;
+  border-radius: 0.75rem !important;
+}
+
+.subject-card h3 {
+  color: #1f2937 !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.subject-card .subject-status {
+  color: #6b7280 !important;
+}
+
+.subject-card .questions-count {
+  color: #1f2937 !important;
+  font-weight: 500 !important;
+}
+
+.subject-card .questions-plan {
+  color: #9ca3af !important;
+}
+
+/* Исправление для списков разделов */
+.section-boundaries-list {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  margin: 1rem 0 !important;
+}
+
+.section-boundaries-list .section-item {
+  color: white !important;
+  font-weight: 500 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Исправление для счетчика вопросов */
+.question-counter {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 0.5rem !important;
+  padding: 0.75rem !important;
+  color: white !important;
+}
+
+.question-counter .total-count {
+  font-weight: 600 !important;
+  color: #fbbf24 !important; /* yellow for emphasis */
+}
+
+/* Исправление для карточек в белом фоне */
+.card-content-dark {
+  background: white !important;
+  color: #1f2937 !important;
+}
+
+.card-content-dark .card-title {
+  color: #1f2937 !important;
+}
+
+.card-content-dark .card-description {
+  color: #6b7280 !important;
+}
+
+/* Принудительное исправление для всех проблемных элементов */
+.tests-page .text-gray-700,
+.tests-page .text-gray-600,
+.tests-page .text-gray-500 {
+  color: white !important;
+}
+
+/* Исправление для карточек на темном фоне */
+.tests-page .bg-gray-50 {
+  background: white !important;
+  color: #1f2937 !important;
+}
+
+/* Исправление для badge элементов */
+.tests-page .badge-outline {
+  border-color: #e5e7eb !important;
+  color: #1f2937 !important;
+  background: white !important;
+}
+
+/* Мобильные исправления */
+@media (max-width: 768px) {
+  .tests-page h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  .tests-page p {
+    font-size: 0.875rem !important;
+  }
+  
+  .subject-card {
+    padding: 0.75rem !important;
+  }
+}
+
+/* Dark mode принудительные исправления */
+.dark .tests-page,
+.tests-page {
+  background: linear-gradient(135deg, #0f172a 0%, #581c87 50%, #0f172a 100%) !important;
+}
+
+.dark .tests-page .card-content,
+.tests-page .card-content {
+  background: white !important;
+  color: #1f2937 !important;
+}
+
+.dark .tests-page .subject-card,
+.tests-page .subject-card {
+  background: white !important;
+  color: #1f2937 !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+/* Экстренное исправление для невидимого текста */
+.emergency-text-fix {
+  color: white !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 0.25rem !important;
+}
+
+.emergency-card-fix {
+  background: white !important;
+  color: #1f2937 !important;
+  border: 2px solid #e5e7eb !important;
+  padding: 1rem !important;
+  border-radius: 0.5rem !important;
+}
+
+.emergency-card-fix h3,
+.emergency-card-fix .font-medium {
+  color: #1f2937 !important;
+}
+
+.emergency-card-fix .text-sm,
+.emergency-card-fix .subject-status {
+  color: #6b7280 !important;
+}
+
+

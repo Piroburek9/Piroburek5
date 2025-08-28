@@ -1,0 +1,340 @@
+/* ===== CRITICAL FIXES FOR PROGRESS AND ACHIEVEMENTS VISIBILITY ===== */
+
+/* Fix for ProgressWithContext component */
+.progress-with-context {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  color: #1F2937;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.progress-subject {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #1F2937;
+  font-size: 0.875rem;
+}
+
+.progress-value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #1F2937;
+}
+
+.progress-value span:first-child {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #1F2937;
+}
+
+.progress-value span:last-child {
+  color: #6B7280;
+  font-size: 0.75rem;
+}
+
+/* Progress bar container */
+.progress-enhanced {
+  width: 100%;
+  height: 8px;
+  background-color: #F3F4F6;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+/* Progress bar fill */
+.progress-bar-enhanced {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+/* Progress bar colors */
+.progress-excellent {
+  background-color: #10B981; /* Green */
+}
+
+.progress-good {
+  background-color: #3B82F6; /* Blue */
+}
+
+.progress-average {
+  background-color: #F59E0B; /* Yellow */
+}
+
+.progress-poor {
+  background-color: #EF4444; /* Red */
+}
+
+/* Progress details */
+.progress-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #6B7280;
+}
+
+.progress-questions,
+.progress-target {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.progress-target {
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.125rem;
+}
+
+/* Screen reader only content */
+.progress-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Fix for SubjectProgressCard */
+.card-interactive {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #1F2937;
+}
+
+.card-interactive:hover {
+  border-color: #D1D5DB;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.card-interactive:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.content-with-subject {
+  margin-bottom: 0.75rem;
+}
+
+.subject-label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1F2937;
+  margin-bottom: 0.25rem;
+}
+
+.content-main {
+  font-size: 0.875rem;
+  color: #6B7280;
+  line-height: 1.4;
+}
+
+.content-secondary {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #6B7280;
+}
+
+/* Fix for QuestionCountEnhanced */
+.question-count-enhanced {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  color: #1F2937;
+}
+
+.question-count-subject {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #1F2937;
+  margin-bottom: 0.5rem;
+}
+
+.question-count-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question-count-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.question-count-progress span:first-child {
+  color: #1F2937;
+  font-size: 0.875rem;
+}
+
+.question-count-progress span:last-child {
+  color: #6B7280;
+  font-size: 0.75rem;
+}
+
+.question-count-target {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.question-count-target span {
+  color: #6B7280;
+}
+
+/* Fix for achievements section in Profile.tsx */
+.achievement-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 0.5rem;
+  color: #1F2937;
+}
+
+.achievement-item .trophy-icon {
+  color: #F59E0B;
+  flex-shrink: 0;
+}
+
+.achievement-item span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1F2937;
+}
+
+/* Fix for subject progress cards in Tests page */
+.subject-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  color: #1F2937;
+  transition: all 0.2s ease;
+}
+
+.subject-card:hover {
+  border-color: #D1D5DB;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subject-card h3 {
+  color: #1F2937;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.subject-card .subject-status {
+  color: #6B7280;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.subject-card .questions-count {
+  color: #1F2937;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.subject-card .questions-plan {
+  color: #6B7280;
+  font-size: 0.75rem;
+}
+
+/* Dark mode fixes */
+.dark .progress-with-context,
+.dark .card-interactive,
+.dark .question-count-enhanced,
+.dark .achievement-item,
+.dark .subject-card {
+  background: #1F2937;
+  border-color: #374151;
+  color: #F9FAFB;
+}
+
+.dark .progress-subject,
+.dark .progress-value span:first-child,
+.dark .subject-label,
+.dark .question-count-subject,
+.dark .achievement-item span,
+.dark .subject-card h3,
+.dark .questions-count {
+  color: #F9FAFB;
+}
+
+.dark .progress-value span:last-child,
+.dark .content-main,
+.dark .content-secondary,
+.dark .progress-details,
+.dark .question-count-progress span:last-child,
+.dark .question-count-target span,
+.dark .subject-status,
+.dark .questions-plan {
+  color: #D1D5DB;
+}
+
+.dark .progress-enhanced {
+  background-color: #374151;
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 768px) {
+  .progress-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .progress-value {
+    align-items: flex-start;
+  }
+  
+  .progress-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .progress-target {
+    align-items: flex-start;
+  }
+  
+  .question-count-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .question-count-target {
+    align-items: flex-start;
+  }
+}

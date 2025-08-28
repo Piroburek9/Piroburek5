@@ -1,0 +1,632 @@
+/* Fancy Design System - Enhanced Visual Appeal */
+
+/* === Advanced Color Palette === */
+:root {
+  /* Fancy Gradients */
+  --gradient-cosmic: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+  --gradient-aurora: linear-gradient(135deg, #a8edea 0%, #fed6e3 50%, #ffecd2 100%);
+  --gradient-sunset: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --gradient-ocean: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-forest: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+  --gradient-neon: linear-gradient(135deg, #ff006e 0%, #8338ec 50%, #3a86ff 100%);
+  
+  /* Fancy Shadows */
+  --shadow-glow: 0 0 20px rgba(102, 126, 234, 0.3);
+  --shadow-glow-hover: 0 0 40px rgba(102, 126, 234, 0.5);
+  --shadow-neon: 0 0 30px rgba(255, 0, 110, 0.4);
+  --shadow-cosmic: 0 20px 60px rgba(102, 126, 234, 0.3);
+  --shadow-floating: 0 30px 60px rgba(0, 0, 0, 0.12);
+  
+  /* Animation Durations */
+  --duration-fast: 0.2s;
+  --duration-normal: 0.4s;
+  --duration-slow: 0.8s;
+  --duration-ultra-slow: 2s;
+}
+
+.dark {
+  --shadow-glow: 0 0 25px rgba(102, 126, 234, 0.4);
+  --shadow-glow-hover: 0 0 50px rgba(102, 126, 234, 0.6);
+  --shadow-cosmic: 0 25px 80px rgba(102, 126, 234, 0.4);
+}
+
+/* === Fancy Background Effects === */
+.fancy-bg {
+  position: relative;
+  background: var(--gradient-cosmic);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+.fancy-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+  animation: floatingOrbs 20s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes floatingOrbs {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(30px, -30px) rotate(120deg); }
+  66% { transform: translate(-20px, 20px) rotate(240deg); }
+}
+
+/* === Fancy Cards === */
+.fancy-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  box-shadow: var(--shadow-cosmic);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--duration-normal) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fancy-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.fancy-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-floating);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* === Fancy Buttons === */
+.btn-fancy {
+  position: relative;
+  background: var(--gradient-ocean);
+  border: none;
+  border-radius: 16px;
+  color: white;
+  font-weight: 600;
+  padding: 16px 32px;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all var(--duration-normal) cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-fancy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left var(--duration-slow);
+}
+
+.btn-fancy:hover::before {
+  left: 100%;
+}
+
+.btn-fancy:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow-hover);
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+.btn-fancy:active {
+  transform: translateY(-1px);
+}
+
+/* Fancy Button Variants */
+.btn-fancy-neon {
+  background: var(--gradient-neon);
+  box-shadow: var(--shadow-neon);
+  animation: neonPulse 2s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+@keyframes neonPulse {
+  0%, 100% { box-shadow: var(--shadow-neon); }
+  50% { box-shadow: 0 0 50px rgba(255, 0, 110, 0.6); }
+}
+
+.btn-fancy-sunset {
+  background: var(--gradient-sunset);
+  box-shadow: 0 0 30px rgba(250, 112, 154, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* === Fancy Inputs === */
+.input-fancy {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 16px 20px;
+  color: white;
+  font-size: 16px;
+  transition: all var(--duration-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.input-fancy::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.input-fancy:focus {
+  outline: none;
+  border-color: rgba(102, 126, 234, 0.6);
+  box-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.input-fancy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-cosmic);
+  transform: scaleX(0);
+  transition: transform var(--duration-normal);
+}
+
+.input-fancy:focus::before {
+  transform: scaleX(1);
+}
+
+/* === Fancy Navigation === */
+.nav-fancy {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(30px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.nav-fancy::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gradient-cosmic);
+  opacity: 0.6;
+}
+
+.nav-item-fancy {
+  position: relative;
+  padding: 12px 24px;
+  border-radius: 12px;
+  transition: all var(--duration-normal);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-item-fancy:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.nav-item-fancy.active {
+  background: var(--gradient-ocean);
+  color: white;
+  box-shadow: var(--shadow-glow);
+}
+
+/* === Fancy Text Effects === */
+.text-fancy-gradient {
+  background: var(--gradient-cosmic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  animation: gradientShift 8s ease infinite;
+}
+
+.text-fancy-glow {
+  color: #667eea;
+  text-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 0 20px rgba(102, 126, 234, 0.5); }
+  50% { text-shadow: 0 0 30px rgba(102, 126, 234, 0.8); }
+}
+
+.text-fancy-typewriter {
+  border-right: 2px solid #667eea;
+  animation: typewriter 4s steps(40) infinite, blink 1s infinite;
+}
+
+@keyframes typewriter {
+  0%, 50% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { border-color: #667eea; }
+  51%, 100% { border-color: transparent; }
+}
+
+/* === Fancy Loading Animations === */
+.loading-fancy {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loading-fancy::before,
+.loading-fancy::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  animation: loadingPulse 2s ease-in-out infinite;
+}
+
+.loading-fancy::before {
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-cosmic);
+  animation-delay: 0s;
+}
+
+.loading-fancy::after {
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  background: var(--gradient-neon);
+  animation-delay: 0.5s;
+}
+
+@keyframes loadingPulse {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: scale(0.8); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.2); 
+  }
+}
+
+/* === Fancy Particle Effects === */
+.particles-fancy {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle-fancy {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--gradient-cosmic);
+  border-radius: 50%;
+  animation: particleFloat 8s linear infinite;
+  opacity: 0.7;
+}
+
+.particle-fancy:nth-child(odd) {
+  animation-duration: 12s;
+  animation-delay: -2s;
+}
+
+.particle-fancy:nth-child(even) {
+  animation-duration: 10s;
+  animation-delay: -4s;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* === Fancy Hover Effects === */
+.hover-fancy-lift {
+  transition: all var(--duration-normal) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-fancy-lift:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: var(--shadow-floating);
+}
+
+.hover-fancy-glow {
+  transition: all var(--duration-normal);
+}
+
+.hover-fancy-glow:hover {
+  box-shadow: var(--shadow-glow-hover);
+  border-color: rgba(102, 126, 234, 0.6);
+}
+
+/* === Fancy Scrollbar === */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-cosmic);
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gradient-neon);
+}
+
+/* === Fancy Animations === */
+.animate-fancy-fade-in {
+  animation: fancyFadeIn 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-fancy-slide-up {
+  animation: fancySlideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-fancy-scale-in {
+  animation: fancyScaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fancyFadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px) scale(0.9);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fancySlideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(50px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+@keyframes fancyScaleIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.8) rotate(-5deg);
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* === Fancy Educational Elements === */
+.achievement-fancy {
+  background: var(--gradient-sunset);
+  color: white;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 0 25px rgba(250, 112, 154, 0.4);
+  animation: achievementPulse 3s ease-in-out infinite;
+}
+
+@keyframes achievementPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.progress-fancy {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  height: 12px;
+}
+
+.progress-fancy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--gradient-cosmic);
+  border-radius: 20px;
+  transition: width var(--duration-slow) cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+.ai-avatar-fancy {
+  background: var(--gradient-neon);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: var(--shadow-neon);
+  animation: aiPulse 4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* === Icon Alignment System === */
+.ai-avatar-fancy svg {
+  width: 50% !important;
+  height: 50% !important;
+  flex-shrink: 0;
+}
+
+/* Universal icon container */
+.icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Icon sizing utilities */
+.icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-md {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-lg {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-xl {
+  width: 32px;
+  height: 32px;
+}
+
+/* Button icon alignment */
+.btn-fancy svg,
+.btn-fancy-neon svg,
+.btn-fancy-sunset svg {
+  flex-shrink: 0;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+/* Navigation item alignment */
+.nav-item-fancy {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-item-fancy svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+/* Avatar sizing fixes */
+.ai-avatar-fancy.h-8.w-8 {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.ai-avatar-fancy.h-8.w-8 svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Responsive icon adjustments */
+@media (max-width: 768px) {
+  .btn-fancy svg,
+  .btn-fancy-neon svg,
+  .btn-fancy-sunset svg {
+    width: 1em;
+    height: 1em;
+  }
+  
+  .nav-item-fancy svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@keyframes aiPulse {
+  0%, 100% { 
+    box-shadow: var(--shadow-neon);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 50px rgba(255, 0, 110, 0.8);
+    transform: scale(1.1);
+  }
+}
+
+/* === Responsive Fancy Design === */
+@media (max-width: 768px) {
+  .fancy-card {
+    border-radius: 20px;
+  }
+  
+  .btn-fancy {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+  
+  .input-fancy {
+    padding: 14px 18px;
+  }
+}
+
+/* === Dark Mode Enhancements === */
+.dark .fancy-card {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark .input-fancy {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark .nav-fancy {
+  background: rgba(0, 0, 0, 0.5);
+}

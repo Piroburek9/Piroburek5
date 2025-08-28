@@ -1,0 +1,367 @@
+/* ===== RESPONSIVE DESIGN WITH SPACING TOKENS ===== */
+
+/* === BREAKPOINT SYSTEM === */
+/* Mobile First Approach */
+/* xs: 0px - 319px (base styles) */
+/* sm: 320px - 374px */
+/* md: 375px - 767px */
+/* lg: 768px - 1023px */
+/* xl: 1024px+ */
+
+/* === RESPONSIVE SPACING TOKENS === */
+:root {
+  /* Mobile spacing (base) */
+  --space-responsive-xs: var(--space-1); /* 4px */
+  --space-responsive-sm: var(--space-2); /* 8px */
+  --space-responsive-md: var(--space-3); /* 12px */
+  --space-responsive-lg: var(--space-4); /* 16px */
+  --space-responsive-xl: var(--space-6); /* 24px */
+  --space-responsive-2xl: var(--space-8); /* 32px */
+  
+  /* Container max-widths */
+  --container-sm: 320px;
+  --container-md: 375px;
+  --container-lg: 768px;
+  --container-xl: 1024px;
+  --container-2xl: 1200px;
+}
+
+/* Prevent horizontal scrolling and allow flex/grids to shrink on small screens */
+@media (max-width: 768px) {
+  .flex,
+  .grid,
+  .container,
+  .max-w-7xl,
+  .max-w-4xl,
+  .max-w-3xl {
+    min-width: 0;
+  }
+  html, body { overflow-x: hidden; }
+}
+
+/* === TYPOGRAPHY SCALE - MOBILE FIRST === */
+
+/* Base Mobile Typography (0px+) */
+.text-responsive-xs { font-size: 0.625rem; line-height: 1.2; } /* 10px */
+.text-responsive-sm { font-size: 0.75rem; line-height: 1.25; } /* 12px */
+.text-responsive-base { font-size: 0.875rem; line-height: 1.4; } /* 14px */
+.text-responsive-lg { font-size: 1rem; line-height: 1.5; } /* 16px */
+.text-responsive-xl { font-size: 1.125rem; line-height: 1.4; } /* 18px */
+.text-responsive-2xl { font-size: 1.25rem; line-height: 1.3; } /* 20px */
+.text-responsive-3xl { font-size: 1.5rem; line-height: 1.25; } /* 24px */
+.text-responsive-4xl { font-size: 1.75rem; line-height: 1.2; } /* 28px */
+
+/* === BREAKPOINT: 320px (Small Mobile) === */
+@media (min-width: 320px) {
+  :root {
+    --space-responsive-xs: var(--space-1); /* 4px */
+    --space-responsive-sm: var(--space-2); /* 8px */
+    --space-responsive-md: var(--space-4); /* 16px */
+    --space-responsive-lg: var(--space-5); /* 20px */
+    --space-responsive-xl: var(--space-6); /* 24px */
+    --space-responsive-2xl: var(--space-8); /* 32px */
+  }
+
+  /* Typography adjustments */
+  .text-responsive-base { font-size: 0.875rem; line-height: 1.4; } /* 14px */
+  .text-responsive-lg { font-size: 1rem; line-height: 1.5; } /* 16px */
+  .text-responsive-xl { font-size: 1.125rem; line-height: 1.4; } /* 18px */
+  .text-responsive-2xl { font-size: 1.25rem; line-height: 1.3; } /* 20px */
+  .text-responsive-3xl { font-size: 1.5rem; line-height: 1.25; } /* 24px */
+  .text-responsive-4xl { font-size: 1.875rem; line-height: 1.2; } /* 30px */
+
+  /* Component spacing */
+  .card-layout-fixed {
+    gap: var(--space-responsive-md);
+    padding: var(--space-responsive-md);
+  }
+  
+  .card-icon-wrapper {
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+  }
+  
+  .card-icon-wrapper svg,
+  .card-icon-wrapper img {
+    width: 1.25rem; /* 20px */
+    height: 1.25rem; /* 20px */
+  }
+}
+
+/* === BREAKPOINT: 375px (Standard Mobile) === */
+@media (min-width: 375px) {
+  :root {
+    --space-responsive-xs: var(--space-2); /* 8px */
+    --space-responsive-sm: var(--space-3); /* 12px */
+    --space-responsive-md: var(--space-4); /* 16px */
+    --space-responsive-lg: var(--space-6); /* 24px */
+    --space-responsive-xl: var(--space-8); /* 32px */
+    --space-responsive-2xl: var(--space-10); /* 40px */
+  }
+
+  /* Typography scale up */
+  .text-responsive-base { font-size: 1rem; line-height: 1.5; } /* 16px */
+  .text-responsive-lg { font-size: 1.125rem; line-height: 1.4; } /* 18px */
+  .text-responsive-xl { font-size: 1.25rem; line-height: 1.3; } /* 20px */
+  .text-responsive-2xl { font-size: 1.375rem; line-height: 1.3; } /* 22px */
+  .text-responsive-3xl { font-size: 1.625rem; line-height: 1.25; } /* 26px */
+  .text-responsive-4xl { font-size: 2rem; line-height: 1.2; } /* 32px */
+
+  /* Component adjustments */
+  .card-layout-fixed {
+    gap: var(--space-responsive-lg);
+    padding: var(--space-responsive-lg);
+  }
+  
+  .card-icon-wrapper {
+    width: 3rem; /* 48px */
+    height: 3rem; /* 48px */
+  }
+  
+  .card-icon-wrapper svg,
+  .card-icon-wrapper img {
+    width: 1.5rem; /* 24px */
+    height: 1.5rem; /* 24px */
+  }
+
+  /* Text overflow handling improves */
+  .text-clamp-2 {
+    max-height: calc(1.4em * 2);
+  }
+  
+  .text-clamp-3 {
+    max-height: calc(1.4em * 3);
+  }
+}
+
+/* === BREAKPOINT: 768px (Tablet) === */
+@media (min-width: 768px) {
+  :root {
+    --space-responsive-xs: var(--space-2); /* 8px */
+    --space-responsive-sm: var(--space-4); /* 16px */
+    --space-responsive-md: var(--space-6); /* 24px */
+    --space-responsive-lg: var(--space-8); /* 32px */
+    --space-responsive-xl: var(--space-10); /* 40px */
+    --space-responsive-2xl: var(--space-12); /* 48px */
+  }
+
+  /* Desktop typography */
+  .text-responsive-base { font-size: 1rem; line-height: 1.6; } /* 16px */
+  .text-responsive-lg { font-size: 1.125rem; line-height: 1.5; } /* 18px */
+  .text-responsive-xl { font-size: 1.25rem; line-height: 1.4; } /* 20px */
+  .text-responsive-2xl { font-size: 1.5rem; line-height: 1.3; } /* 24px */
+  .text-responsive-3xl { font-size: 1.875rem; line-height: 1.25; } /* 30px */
+  .text-responsive-4xl { font-size: 2.25rem; line-height: 1.2; } /* 36px */
+
+  /* Enhanced card layouts for larger screens */
+  .card-layout-fixed {
+    gap: var(--space-responsive-xl);
+    padding: var(--space-responsive-xl);
+  }
+  
+  .card-icon-wrapper {
+    width: 3.5rem; /* 56px */
+    height: 3.5rem; /* 56px */
+  }
+  
+  .card-icon-wrapper svg,
+  .card-icon-wrapper img {
+    width: 1.75rem; /* 28px */
+    height: 1.75rem; /* 28px */
+  }
+
+  /* Better text handling on larger screens */
+  .text-wrap-robust {
+    hyphens: none; /* Disable hyphenation on larger screens */
+  }
+  
+  .text-clamp-2 {
+    max-height: calc(1.5em * 2);
+  }
+  
+  .text-clamp-3 {
+    max-height: calc(1.5em * 3);
+  }
+
+  /* Multi-column layouts become viable */
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-responsive-lg);
+  }
+}
+
+/* === BREAKPOINT: 1024px (Desktop) === */
+@media (min-width: 1024px) {
+  :root {
+    --space-responsive-xs: var(--space-3); /* 12px */
+    --space-responsive-sm: var(--space-4); /* 16px */
+    --space-responsive-md: var(--space-6); /* 24px */
+    --space-responsive-lg: var(--space-8); /* 32px */
+    --space-responsive-xl: var(--space-12); /* 48px */
+    --space-responsive-2xl: var(--space-16); /* 64px */
+  }
+
+  /* Full desktop typography */
+  .text-responsive-base { font-size: 1rem; line-height: 1.7; } /* 16px */
+  .text-responsive-lg { font-size: 1.125rem; line-height: 1.6; } /* 18px */
+  .text-responsive-xl { font-size: 1.25rem; line-height: 1.5; } /* 20px */
+  .text-responsive-2xl { font-size: 1.5rem; line-height: 1.4; } /* 24px */
+  .text-responsive-3xl { font-size: 1.875rem; line-height: 1.3; } /* 30px */
+  .text-responsive-4xl { font-size: 2.25rem; line-height: 1.2; } /* 36px */
+  .text-responsive-5xl { font-size: 3rem; line-height: 1.1; } /* 48px */
+
+  /* Premium spacing for desktop */
+  .card-layout-fixed {
+    gap: var(--space-responsive-2xl);
+    padding: var(--space-responsive-2xl);
+  }
+  
+  .card-icon-wrapper {
+    width: 4rem; /* 64px */
+    height: 4rem; /* 64px */
+  }
+  
+  .card-icon-wrapper svg,
+  .card-icon-wrapper img {
+    width: 2rem; /* 32px */
+    height: 2rem; /* 32px */
+  }
+
+  /* Full grid layouts */
+  .achievement-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-responsive-xl);
+  }
+
+  /* Enhanced text handling */
+  .text-clamp-2 {
+    max-height: calc(1.6em * 2);
+  }
+  
+  .text-clamp-3 {
+    max-height: calc(1.6em * 3);
+  }
+}
+
+/* === RESPONSIVE UTILITIES === */
+
+/* Container with responsive padding */
+.container-responsive {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-responsive-md);
+}
+
+@media (min-width: 320px) {
+  .container-responsive { max-width: var(--container-sm); }
+}
+
+@media (min-width: 375px) {
+  .container-responsive { max-width: var(--container-md); }
+}
+
+@media (min-width: 768px) {
+  .container-responsive { 
+    max-width: var(--container-lg);
+    padding: 0 var(--space-responsive-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive { 
+    max-width: var(--container-xl);
+    padding: 0 var(--space-responsive-xl);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-responsive { max-width: var(--container-2xl); }
+}
+
+/* Responsive text utilities */
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: block;
+  }
+  
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* Responsive icon sizes */
+@media (max-width: 374px) {
+  .icon-responsive { width: 1rem; height: 1rem; }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .icon-responsive { width: 1.25rem; height: 1.25rem; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .icon-responsive { width: 1.5rem; height: 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .icon-responsive { width: 1.75rem; height: 1.75rem; }
+}
+
+/* === RESPONSIVE ACHIEVEMENT CARDS === */
+.achievement-card-responsive {
+  padding: var(--space-responsive-md);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+}
+
+@media (min-width: 375px) {
+  .achievement-card-responsive {
+    padding: var(--space-responsive-lg);
+    border-radius: var(--radius-xl);
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (min-width: 768px) {
+  .achievement-card-responsive {
+    padding: var(--space-responsive-xl);
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* === TOUCH-FRIENDLY INTERACTIONS === */
+@media (hover: none) and (pointer: coarse) {
+  /* Touch devices */
+  .card-layout-fixed,
+  .achievement-card-fixed,
+  .achievement-card-responsive {
+    min-height: 44px; /* iOS/Android touch target minimum */
+    padding: max(var(--space-responsive-md), 12px);
+  }
+  
+  .card-icon-wrapper {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* === PRINT STYLES === */
+@media print {
+  .card-layout-fixed,
+  .achievement-card-fixed {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .text-clamp-2,
+  .text-clamp-3 {
+    -webkit-line-clamp: unset;
+    max-height: unset;
+    overflow: visible;
+  }
+}
