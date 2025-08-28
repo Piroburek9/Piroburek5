@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPlatform - Современная образовательная платформа</title>
+    <meta name="description" content="Современная образовательная платформа с тестированием, AI-помощником и прогресс-трекингом">
+    <meta name="keywords" content="образование, тестирование, AI, обучение, Казахстан">
+    <meta name="author" content="EduPlatform Team">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:3000/">
+    <meta property="og:title" content="EduPlatform - Современная образовательная платформа">
+    <meta property="og:description" content="Современная образовательная платформа с тестированием, AI-помощником и прогресс-трекингом">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://localhost:3000/">
+    <meta property="twitter:title" content="EduPlatform - Современная образовательная платформа">
+    <meta property="twitter:description" content="Современная образовательная платформа с тестированием, AI-помощником и прогресс-трекингом">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="msapplication-TileColor" content="#3b82f6">
+    
+    <!-- Preconnect to optimize loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- MathJax for LaTeX rendering -->
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [['$','$'], ['\\(','\\)']] },
+        svg: { fontCache: 'global' }
+      };
+    </script>
+    <script id="mathjax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="module" crossorigin src="/assets/index-d9da2ede.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-dd3c4855.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-7332e38b.js">
+  <link rel="modulepreload" crossorigin href="/assets/charts-3c6eb5ce.js">
+  <link rel="modulepreload" crossorigin href="/assets/motion-6ccf754a.js">
+  <link rel="stylesheet" href="/assets/index-f93ac447.css">
+</head>
+<body class="min-h-screen antialiased">
+    <div class="loading-container">
+        <div class="logo">EduPlatform</div>
+        <div class="loading-text">Загрузка EduPlatform...</div>
+        <div class="spinner"></div>
+        <div class="error-message" id="errorMessage">
+            <p>Ошибка загрузки приложения. Проверьте подключение к интернету.</p>
+            <button class="retry-button" onclick="location.reload()">Попробовать снова</button>
+        </div>
+    </div>
+
+    <!-- React App Root -->
+    <div id="root"></div>
+
+    <!-- Development Scripts -->
+    <script>
+        // Service Worker registration for PWA capabilities
+        if ('serviceWorker' in navigator && window.location.hostname !== 'localhost') {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // Error handling
+        window.addEventListener('error', (event) => {
+            console.error('Global error:', event.error);
+            document.getElementById('errorMessage').style.display = 'block';
+        });
+
+        // Check if development server is running
+        let retryCount = 0;
+        const maxRetries = 3;
+        
+        function checkDevServer() {
+            fetch('/vite-dev-server')
+                .then(() => {
+                    // Development server is running, hide loading
+                    document.querySelector('.loading-container').style.display = 'none';
+                })
+                .catch(() => {
+                    retryCount++;
+                    if (retryCount >= maxRetries) {
+                        document.getElementById('errorMessage').style.display = 'block';
+                        document.querySelector('.spinner').style.display = 'none';
+                    } else {
+                        setTimeout(checkDevServer, 1000);
+                    }
+                });
+        }
+
+        // Start checking when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(checkDevServer, 500);
+        });
+
+        // Hide loading screen when React app loads
+        window.addEventListener('message', (event) => {
+            if (event.data === 'react-app-loaded') {
+                document.querySelector('.loading-container').style.display = 'none';
+            }
+        });
+    </script>
+
+    <!-- Module Scripts for Development -->
+    
+
+    <!-- Production Build Scripts (will be injected by build process) -->
+    <script>
+        // Production fallback - these script tags will be replaced by the build process
+        // For now, we'll use dynamic imports in development
+    </script>
+</body>
+</html>
